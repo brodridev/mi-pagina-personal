@@ -1,0 +1,149 @@
+/* Scroll Navigation Component Styles */
+
+.main-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      rgba(255, 255, 255, 0.1) 100%);
+    pointer-events: none;
+  }
+}
+
+.logo-btn {
+  position: relative;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.nav-desktop {
+  .nav-item {
+    position: relative;
+    font-family: 'Victor Mono', monospace;
+    font-weight: 500;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    
+    &:hover::before {
+      width: 80%;
+    }
+    
+    &.text-primary-600 {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.mobile-menu-btn {
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  svg {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  &:hover svg {
+    transform: rotate(90deg);
+  }
+}
+
+.mobile-menu {
+  animation: slideDown 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  .mobile-nav-item {
+    font-family: 'Victor Mono', monospace;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+      transition: width 0.3s ease-in-out;
+      transform: translateY(-50%);
+    }
+    
+    &:hover::before,
+    &.text-primary-600::before {
+      width: 4px;
+    }
+  }
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados activos */
+.text-primary-600 {
+  position: relative;
+  
+  &::after {
+    content: '●';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3b82f6;
+    font-size: 8px;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-btn {
+    font-size: 1.1rem;
+  }
+}

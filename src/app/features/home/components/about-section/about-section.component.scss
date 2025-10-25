@@ -1,0 +1,239 @@
+/* About Section Component Styles */
+
+.about-section {
+  font-family: 'Victor Mono', monospace;
+}
+
+.section-header {
+  .section-title {
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+      animation: expandLine 1s ease-out 0.5s both;
+    }
+  }
+  
+  .title-underline {
+    animation: scaleIn 0.8s ease-out 0.8s both;
+  }
+}
+
+.image-container {
+  .main-image {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+    }
+  }
+  
+  .decoration-circle {
+    animation: float 6s ease-in-out infinite;
+    
+    &.decoration-1 {
+      animation-delay: 0s;
+    }
+    
+    &.decoration-2 {
+      animation-delay: 3s;
+    }
+  }
+}
+
+.content-container {
+  .content-title {
+    position: relative;
+    font-family: 'Victor Mono', monospace;
+    font-weight: 700;
+    
+    &::before {
+      content: '●';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #3b82f6;
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  .bio-paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+    transition: color 0.3s ease-in-out;
+    
+    &:hover {
+      color: #374151;
+      
+      .dark & {
+        color: #d1d5db;
+      }
+    }
+  }
+}
+
+.stats-container {
+  .stat-card {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+    
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59, 130, 246, 0.2);
+      box-shadow: 0 10px 25px -3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .stat-number {
+      font-family: 'Victor Mono', monospace;
+      font-weight: 800;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: #3b82f6;
+        transition: width 0.3s ease-in-out;
+      }
+    }
+    
+    &:hover .stat-number::after {
+      width: 80%;
+    }
+    
+    .stat-label {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.traits-container {
+  .traits-title {
+    font-family: 'Victor Mono', monospace;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    }
+  }
+  
+  .trait-item {
+    animation: slideInLeft 0.6s ease-out both;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+      transform: translateX(4px);
+      
+      .dark & {
+        background: rgba(59, 130, 246, 0.1);
+      }
+    }
+    
+    .trait-dot {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    &:hover .trait-dot {
+      transform: scale(1.5);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+    
+    .trait-text {
+      font-weight: 500;
+    }
+  }
+}
+
+/* Animaciones */
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to { 
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% { 
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .image-container {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .traits-container .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-title::before {
+    display: none;
+  }
+}

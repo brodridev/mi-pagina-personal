@@ -1,0 +1,64 @@
+/* Back to Top Component Styles */
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  
+  /* Animaciones personalizadas */
+  animation: fadeInUp 0.3s ease-out;
+  
+  &:hover {
+    animation: pulseGlow 0.6s ease-in-out infinite alternate;
+  }
+  
+  &:active {
+    transform: translateY(-2px) scale(0.95);
+  }
+  
+  /* Responsive */
+  @media (max-width: 640px) {
+    bottom: 1rem;
+    right: 1rem;
+    height: 2.75rem;
+    width: 2.75rem;
+    
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 10px 25px -3px rgba(59, 130, 246, 0.4), 
+                0 4px 6px -2px rgba(59, 130, 246, 0.1);
+  }
+  to {
+    box-shadow: 0 20px 40px -3px rgba(59, 130, 246, 0.6), 
+                0 8px 12px -2px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* SVG animación */
+svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-to-top-btn:hover svg {
+  transform: translateY(-1px);
+}

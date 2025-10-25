@@ -1,0 +1,20 @@
+<button 
+  *ngIf="scrollService.showBackToTop()"
+  (click)="scrollToTop()"
+  class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg hover:bg-primary-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 animate-bounce-in back-to-top-btn"
+  aria-label="Volver arriba"
+>
+  <svg 
+    class="h-6 w-6" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      stroke-width="2" 
+      d="M5 10l7-7m0 0l7 7m-7-7v18" 
+    />
+  </svg>
+</button>

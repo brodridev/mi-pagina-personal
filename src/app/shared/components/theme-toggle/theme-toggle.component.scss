@@ -1,0 +1,39 @@
+/* Theme Toggle Component Styles */
+
+button {
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+
+  svg {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover svg {
+    transform: rotate(15deg);
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes pulse-light {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rotate-moon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados del tema */
+.theme-light svg {
+  animation: pulse-light 2s ease-in-out infinite;
+}
+
+.theme-dark svg {
+  animation: rotate-moon 20s linear infinite;
+}
