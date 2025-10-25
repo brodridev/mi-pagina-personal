@@ -2,8 +2,14 @@
 
 Una página web personal moderna construida con Angular 20, Tailwind CSS y funcionalidades de navegación avanzadas.
 
-> 🚀 **Live Demo:** [Ver sitio en vivo](#) (Próximamente)
-> 📚 **Repositorio:** Este proyecto está listo para ser clonado y personalizado
+[![Angular](https://img.shields.io/badge/Angular-20-DD0031?style=flat-square&logo=angular)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![pnpm](https://img.shields.io/badge/pnpm-10.19-F69220?style=flat-square&logo=pnpm)](https://pnpm.io/)
+
+> 🚀 **Live Demo:** [Ver sitio en vivo](#) (Próximamente)  
+> 📚 **Repositorio:** https://github.com/brodridev/mi-pagina-personal  
+> 🎨 **Fuente:** Victor Mono | 🎯 **Tema:** Azul personalizado
 
 ## 🚀 Características
 
@@ -32,9 +38,15 @@ Una página web personal moderna construida con Angular 20, Tailwind CSS y funci
 - Node.js 18+ 
 - pnpm (instalar con: `npm install -g pnpm`)
 
-### Instalación
+### Clonado e Instalación
 
-1. **Instalar dependencias:**
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/brodridev/mi-pagina-personal.git
+   cd mi-pagina-personal
+   ```
+
+2. **Instalar dependencias:**
    ```bash
    pnpm install
    ```
