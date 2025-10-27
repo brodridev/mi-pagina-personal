@@ -66,14 +66,15 @@
             Lo que me define
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div 
-              *ngFor="let trait of personalTraits; let i = index"
-              class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg trait-item"
-              [style.animation-delay]="(i * 0.1) + 's'"
-            >
-              <div class="w-2 h-2 bg-primary-500 rounded-full trait-dot"></div>
-              <span class="text-gray-700 dark:text-gray-300 trait-text">{{ trait }}</span>
-            </div>
+            @for (trait of personalTraits; track $index) {
+              <div 
+                class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg trait-item"
+                [style.animation-delay]="($index * 0.1) + 's'"
+              >
+                <div class="w-2 h-2 bg-primary-500 rounded-full trait-dot"></div>
+                <span class="text-gray-700 dark:text-gray-300 trait-text">{{ trait }}</span>
+              </div>
+            }
           </div>
         </div>
       </div>

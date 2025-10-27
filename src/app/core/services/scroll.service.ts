@@ -46,20 +46,25 @@ export class ScrollService {
 
   getCurrentSection(): string {
     const sections = ['intro', 'about', 'professional', 'interests', 'values', 'lifestyle', 'connect'];
-    const scrollPosition = window.scrollY + 100; // Offset para el header
+    const scrollPosition = window.scrollY + 120; // Offset para el header (aumentado para mejor detección)
+    let currentSection = 'intro';
 
-    for (const sectionId of sections) {
+    // Recorrer las secciones en orden inverso para detectar la última visible
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sectionId = sections[i];
       const element = document.getElementById(sectionId);
+      
       if (element) {
         const top = element.offsetTop;
-        const bottom = top + element.offsetHeight;
         
-        if (scrollPosition >= top && scrollPosition < bottom) {
-          return sectionId;
+        // Si hemos pasado el inicio de esta sección, es la sección actual
+        if (scrollPosition >= top - 50) { // Margen de 50px para mejor UX
+          currentSection = sectionId;
+          break;
         }
       }
     }
     
-    return 'intro'; // Default
+    return currentSection;
   }
 }

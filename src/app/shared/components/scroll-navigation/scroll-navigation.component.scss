@@ -121,7 +121,8 @@
 }
 
 /* Estados activos */
-.text-primary-600 {
+.nav-item.text-primary-600,
+.mobile-nav-item.text-primary-600 {
   position: relative;
   
   &::after {
@@ -133,6 +134,20 @@
     color: #3b82f6;
     font-size: 8px;
     animation: pulse 2s infinite;
+  }
+}
+
+/* Específicamente para desktop */
+.nav-desktop .nav-item.text-primary-600 {
+  &::after {
+    right: -16px;
+  }
+}
+
+/* Específicamente para mobile */
+.mobile-menu .mobile-nav-item.text-primary-600 {
+  &::after {
+    right: -12px;
   }
 }
 

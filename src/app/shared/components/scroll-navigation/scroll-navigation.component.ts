@@ -15,18 +15,11 @@ export class ScrollNavigationComponent {
   scrollService = inject(ScrollService);
   navigationItems = NAVIGATION_ITEMS;
   mobileMenuOpen = signal(false);
-  currentSection = signal('intro');
-
-  constructor() {
-    // Actualizar sección actual al hacer scroll
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => {
-        this.currentSection.set(this.scrollService.getCurrentSection());
-      });
-    }
-  }
+  activeSection = signal('intro'); // Cambié el nombre para ser más claro
 
   scrollToSection(anchor: string): void {
+    // Establecer la sección activa cuando se hace clic
+    this.activeSection.set(anchor);
     this.scrollService.scrollToElement(anchor);
   }
 
@@ -39,7 +32,7 @@ export class ScrollNavigationComponent {
   }
 
   getCurrentSectionClass(anchor: string): string {
-    const isActive = this.currentSection() === anchor;
+    const isActive = this.activeSection() === anchor;
     return isActive 
       ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20' 
       : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800';

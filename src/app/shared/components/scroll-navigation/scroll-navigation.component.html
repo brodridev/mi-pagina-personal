@@ -13,14 +13,15 @@
 
       <!-- Navegación Desktop -->
       <div class="hidden md:flex space-x-8 nav-desktop">
-        <button
-          *ngFor="let item of navigationItems"
-          (click)="scrollToSection(item.anchor)"
-          class="px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 nav-item"
-          [class]="getCurrentSectionClass(item.anchor)"
-        >
-          {{ item.label }}
-        </button>
+        @for (item of navigationItems; track item.anchor) {
+          <button
+            (click)="scrollToSection(item.anchor)"
+            class="px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 nav-item"
+            [class]="getCurrentSectionClass(item.anchor)"
+          >
+            {{ item.label }}
+          </button>
+        }
       </div>
 
       <!-- Theme Toggle + Mobile Menu -->
@@ -34,20 +35,22 @@
           aria-label="Abrir menú"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path 
-              *ngIf="!mobileMenuOpen()"
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M4 6h16M4 12h16M4 18h16" 
-            />
-            <path 
-              *ngIf="mobileMenuOpen()"
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M6 18L18 6M6 6l12 12" 
-            />
+            @if (!mobileMenuOpen()) {
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
+            }
+            @if (mobileMenuOpen()) {
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12" 
+              />
+            }
           </svg>
         </button>
       </div>
@@ -55,19 +58,19 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div 
-    *ngIf="mobileMenuOpen()"
-    class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 animate-slide-up mobile-menu"
-  >
-    <div class="px-2 pt-2 pb-3 space-y-1">
-      <button
-        *ngFor="let item of navigationItems"
-        (click)="scrollToSection(item.anchor); closeMobileMenu()"
-        class="block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-all duration-200 mobile-nav-item"
-        [class]="getCurrentSectionClass(item.anchor)"
-      >
-        {{ item.label }}
-      </button>
+  @if (mobileMenuOpen()) {
+    <div class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 animate-slide-up mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        @for (item of navigationItems; track item.anchor) {
+          <button
+            (click)="scrollToSection(item.anchor); closeMobileMenu()"
+            class="block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-all duration-200 mobile-nav-item"
+            [class]="getCurrentSectionClass(item.anchor)"
+          >
+            {{ item.label }}
+          </button>
+        }
+      </div>
     </div>
-  </div>
+  }
 </nav>
