@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "serve:dist": "npx http-server dist/mi-pagina-personal -p 4200",
     "predeploy": "pnpm run build:prod",
-    "deploy": "gh-pages -d dist/mi-pagina-personal"
+    "deploy": "gh-pages -d dist/mi-pagina-personal/browser"
   },
   "prettier": {
     "printWidth": 100,
