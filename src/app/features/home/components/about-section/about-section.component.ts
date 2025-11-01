@@ -14,11 +14,11 @@ export class AboutSectionComponent {
 
   // Datos de ejemplo - personalízalos según tu información
   personalTraits = [
-    'Curioso y siempre aprendiendo',
-    'Amante de los desafíos',
-    'Enfoque en la calidad',
-    'Colaborativo por naturaleza',
-    'Orientado a resultados',
+    'Curioso, siempre!',
+    'Me encantan los desafíos',
+    'Amo la naturaleza',
+    'Sinergia y colaboración',
+    'Cumplo mis objetivos',
     'Mente abierta y adaptable'
   ];
 
@@ -28,11 +28,11 @@ export class AboutSectionComponent {
 
   getBirthYear(): number {
     // Personaliza este valor con tu año de nacimiento
-    return 1990; // Ejemplo
+    return 1992; // Ejemplo
   }
 
   getExperienceYears(): number {
     // Personaliza este valor con tus años de experiencia
-    return 8; // Ejemplo
+    return 6; // Ejemplo
   }
 }

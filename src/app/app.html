@@ -19,12 +19,10 @@
 
       <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
         <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400 mb-4">
-          Aquí puedes hablar sobre tu carrera profesional
+          {{professionalFocus()}}
         </h3>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          Describe tu enfoque profesional, lo que te apasiona de tu trabajo, tus valores en el
-          ámbito laboral, y cómo has evolucionado a lo largo de tu carrera. Este es el espacio para
-          mostrar tu lado profesional sin entrar en detalles técnicos específicos.
+          {{profesionalBackground()}}
         </p>
       </div>
     </div>
@@ -89,9 +87,7 @@
         class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-2xl p-8"
       >
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-          Aquí puedes describir cómo te gusta vivir el día a día, tus rutinas, hábitos que
-          consideras importantes, lugares favoritos, y tu filosofía de vida en general. Es el
-          espacio para mostrar tu personalidad y estilo de vida único.
+         {{ lifestyleDescription() }}
         </p>
       </div>
     </div>
@@ -104,19 +100,19 @@
       <div class="w-24 h-1 bg-white mx-auto rounded-full mb-12"></div>
 
       <p class="text-primary-100 text-lg mb-8">
-        Si te interesa conocer más sobre mí o simplemente quieres charlar, estaré encantado/a de
+        Si te interesa conocer más sobre mí o simplemente quieres charlar, estaré encantado de
         conectar contigo.
       </p>
 
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a
-          href="mailto:tu.email@example.com"
+          href="mailto:devbrod92@gmail.com"
           class="inline-flex items-center px-6 py-3 bg-white text-primary-600 font-medium rounded-full hover:bg-primary-50 transition-colors"
         >
           Enviar Email
         </a>
         <a
-          href="https://linkedin.com/in/tu-perfil"
+          href="https://linkedin.com/in/devbrod"
           target="_blank"
           class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-primary-600 transition-colors"
         >

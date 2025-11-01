@@ -10,20 +10,22 @@ import {
 
 // Información personal - PERSONALIZA ESTA INFORMACIÓN
 export const personalInfo = signal<PersonalInfo>({
-  name: 'Tu Nombre',
-  title: 'Tu Título Profesional',
-  tagline: 'Una frase que te represente perfectamente',
-  bio: 'Aquí puedes escribir una breve descripción sobre ti, tu historia, de dónde vienes y qué te motiva en la vida. Esta es tu oportunidad de mostrar tu personalidad.',
-  profileImage: '',
-  email: 'tu.email@example.com',
-  phone: '+34 123 456 789',
-  location: 'Tu Ciudad, País'
+  name: 'Brandon Rodriguez',
+  title: 'Full Stack Developer',
+  tagline: 'Un hombre sin sueños, No tiene derecho a burlarse de los sueños de los demás.',
+  bio: 'Bogotano hincha de Millonarios y apasionado por el desarrollo, anime y los videojuegos. Me encanta crear soluciones innovadoras y eficientes que marquen la diferencia. Siempre estoy buscando aprender temas nuevos y mejorar mis habilidades para ofrecer lo mejor en cada proyecto en el que trabajo.',
+  profileImage: '/images/profile.jpg',
+  aboutImage: '/images/family.jpg',
+  aboutme:'Me apasiona el fútbol, la cocina y el desarrollo de software. Disfruto viajar, enseñar y aprender algo nuevo cada día. Soy una persona comprometida, responsable y con una gran pasión por mejorar constantemente. Nací en Bogotá en 1992, y desde entonces, mis personas favoritas son mis padres y mi hermano, quienes siempre han sido mi mayor inspiración y apoyo.',
+  email: 'brodridev@gmail.com',
+  phone: '+57 314 2938804',
+  location: 'Bogotá, Colombia'
 });
 
 // Información profesional
 export const professionalInfo = signal<ProfessionalInfo>({
-  currentRole: 'Tu Rol Actual',
-  company: 'Tu Empresa',
+  currentRole: 'Full Stack Developer en Accenture Colombia',
+  company: 'Accenture Colombia',
   experience: 'X años de experiencia en...',
   approach: 'Mi enfoque profesional se basa en... Aquí describes tu filosofía de trabajo y lo que te apasiona de tu carrera.',
   values: [

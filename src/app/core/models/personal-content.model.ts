@@ -10,6 +10,8 @@ export interface PersonalInfo {
   tagline: string;
   bio: string;
   profileImage: string;
+  aboutImage: string;
+  aboutme: string;
   email: string;
   phone?: string;
   location: string;

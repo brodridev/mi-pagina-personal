@@ -14,9 +14,11 @@
       <!-- Avatar placeholder -->
       <div class="relative image-container">
         <div class="aspect-square rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-800 dark:to-primary-900 main-image flex items-center justify-center">
-          <svg class="w-24 h-24 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
+          <img 
+            [src]="personalInfo().aboutImage" 
+            [alt]="personalInfo().name" 
+            class="w-full h-full object-cover"
+          >
         </div>
         <!-- Decoración -->
         <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-500 rounded-full opacity-20 decoration-circle decoration-1"></div>
@@ -30,12 +32,7 @@
             Mi Historia
           </h3>
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed bio-paragraph">
-            {{ personalInfo().bio }}
-          </p>
-          <p class="text-gray-600 dark:text-gray-400 leading-relaxed bio-paragraph">
-            Aquí puedes expandir más sobre tu trasfondo, de dónde vienes, qué experiencias 
-            te han formado como persona, y qué te motiva día a día. Es el espacio perfecto 
-            para ser más personal y auténtico.
+            {{ personalInfo().aboutme }}
           </p>
         </div>
 

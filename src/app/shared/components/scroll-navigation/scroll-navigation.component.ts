@@ -15,7 +15,8 @@ export class ScrollNavigationComponent {
   scrollService = inject(ScrollService);
   navigationItems = NAVIGATION_ITEMS;
   mobileMenuOpen = signal(false);
-  activeSection = signal('intro'); // Cambié el nombre para ser más claro
+  activeSection = signal('intro');
+  name = signal('Brandon Rodriguez');
 
   scrollToSection(anchor: string): void {
     // Establecer la sección activa cuando se hace clic
